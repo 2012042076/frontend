@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html ng-app="careerApp" lang="en">
+<head>
+  <title>Tiger Start</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="frameworks/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="frameworks/jquery/jquery.min.js"></script>
+	
+  <!-- JS (load angular, ui-router, and our custom js file) -->
+  <script src="frameworks/angularjs/angular.js"></script>
+  <script src="frameworks/angularjs/angular-ui-router.min.js"></script>
+  <script src="app.js"></script>	
+  
+  <link href="views/carousel.css" rel="stylesheet" />
+  <script src="views/carousel.js"></script>	
+  
+</head>
+<body style="background-color:#FFCF33">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Tiger Jump</a>
+    </div>
+    <div class="navbar-collapse" ng-class="{collapse: isCollapsed}">
+      <ul class="nav navbar-nav">
+        <li ui-sref-active="active">
+			<a ui-sref="home" class="hidden-xs">Home</a>
+			<a ui-sref="home" class="visible-xs" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">Home</a>
+		</li>
+        <li ui-sref-active="active">
+			<a ui-sref="portfolio" class="hidden-xs">Portfolio</a>
+			<a ui-sref="portfolio" class="visible-xs" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">Portfolio</a>
+		</li>
+        <li ui-sref-active="active">
+			<a ui-sref="explore" class="hidden-xs">Explore</a>
+			<a ui-sref="explore" class="visible-xs" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">Explore</a>
+		</li>
+		<li ui-sref-active="active">
+			<a ui-sref="jobs" class="hidden-xs">Job Posts</a>
+			<a ui-sref="jobs" class="visible-xs" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">Job Posts</a>
+		</li>
+		<li ui-sref-active="active">
+			<a ui-sref="about" class="hidden-xs">About</a>
+			<a ui-sref="about" class="visible-xs" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">About</a>
+		</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+	  <li class="dropdown" ng-class="{ open : dd1 }" ng-init="dd1 = false" ng-click="dd1 = !dd1">
+        <a class="dropdown-toggle" data-toggle="dropdown">Settings<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ui-sref-active="active"><a ui-sref="#">Profile</a></li>
+            <li ui-sref-active="active"><a ui-sref="#">Change Password</a></li>
+            <li ui-sref-active="active"><a ui-sref="#"></a></li>
+			<li ui-sref-active="active"><a ui-sref="#"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Logout</a></li>
+          </ul>
+     </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div ui-view></div>
+</div>
+
+</body>
+</html>
